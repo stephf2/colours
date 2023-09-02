@@ -2,7 +2,7 @@
 
 Description
 
-React navigation execrise
+React navigation execrise: 
 https://github.com/LaFosseAcademy/react-exercises/blob/react-navigation-exercises/instructions.md
 
 In terminal:
