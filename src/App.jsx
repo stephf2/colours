@@ -15,21 +15,21 @@ const App = () => {
 
   return (
     <div className='App'>
-    <Routes>
-    <Route path="/" element={<NavBar/>}>
-      <Route index element={<Pages.Home/>}/> 
-      
-      <Route path="colours">
-      <Route index element={<Pages.Colours colours={colours}/>}/>
-      <Route path="new" element={<Pages.New addColour={addColour}/>}/>
-      <Route path=":colour" element={<Pages.ColourItem colours={colours} />} />
-      <Route path="*" element={<Pages.NotFound/>}/>
-      </Route>
+      <Routes>
+        <Route path="/" element={<NavBar/>}>
+          <Route index element={<Pages.Home/>}/> 
+          
+          <Route path="colours">
+          <Route index element={<Pages.Colours colours={colours}/>}/>
+          <Route path="new" element={<Pages.New addColour={addColour}/>}/>
+          <Route path=":colour" element={<Pages.ColourItem colours={colours} />} />
+          <Route path="*" element={<Pages.NotFound/>}/>
+          </Route>
 
-      <Route path="*" element={<Pages.NotFound/>}/>
-    </Route>
-    </Routes>
-  </div>
+          <Route path="*" element={<Pages.NotFound/>}/>
+        </Route>
+      </Routes>
+    </div>
   )
 }
 

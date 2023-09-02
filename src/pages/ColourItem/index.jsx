@@ -1,5 +1,6 @@
 import React from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import NotFound from '../NotFound'
 
 const ColourItem = ({ colours }) => {
 
@@ -9,26 +10,32 @@ const ColourItem = ({ colours }) => {
   
   const selectedColour = colours.find((selectedcolour) => selectedcolour === colour)
 
-  return (
-    <>
-      <div className='btn-container2'>
-      <button
-      onClick={()=> navigate('/colours')}
-      >
-        Back to Colours
-      </button>
-      </div>
-
-      
-      <div className='selected-container'>
-        <h1  className='selected'
-        style={{backgroundColor: selectedColour}}
+  if(!selectedColour) {
+    return <NotFound/>
+  } else {
+    return (
+      <>
+        <div className='btn-container2'>
+        <button
+        onClick={()=> navigate('/colours')}
         >
-          {selectedColour}
-        </h1>
-      </div>
-    </>
-  )
+          Back to Colours
+        </button>
+        </div>
+
+        
+        <div className='selected-container'>
+          <h1  className='selected'
+          style={{backgroundColor: selectedColour}}
+          >
+            {selectedColour}
+          </h1>
+        </div>
+      </>
+    )
+  }
+
+
 }
 
 export default ColourItem
